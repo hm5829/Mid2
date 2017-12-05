@@ -13,6 +13,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == FUNCTION_MAIN){
+            Toast.makeText(this, "特殊功能", Toast.LENGTH_SHORT).show();
+        }
+    }
     public void func1(View v){
         Intent i = new Intent(this, Func1Activity.class);
         startActivity(i);
@@ -41,15 +48,6 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this, Func7Activity.class);
         startActivityForResult(i, FUNCTION_MAIN);
     }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == FUNCTION_MAIN){
-            Toast.makeText(this, "特殊功能", Toast.LENGTH_SHORT).show();
-        }
-    }
-
     public void func8(View v){
         Intent i = new Intent(this, Func8Activity.class);
         startActivityForResult(i, FUNCTION_MAIN);
