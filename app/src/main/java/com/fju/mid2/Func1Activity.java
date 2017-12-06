@@ -17,8 +17,9 @@ public class Func1Activity extends AppCompatActivity {
     public void number(View v){
         Random r = new Random();
         int i = r.nextInt(6) + 1;
+//        String s = Integer.toString(i);
         new AlertDialog.Builder(this)
-                .setMessage(i)
+                .setMessage("" + i)
                 .show();
     }
 }
